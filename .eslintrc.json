@@ -1,0 +1,11 @@
+{
+  "extends": ["mixmax/node/withJest", "mixmax/node/disable-require-atomic", "mixmax/flow/strict"],
+  "overrides": [
+    {
+      "files": ["test/support/fixtures/**"],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    }
+  ]
+}

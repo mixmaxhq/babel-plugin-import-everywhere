@@ -1,0 +1,66 @@
+{
+  "name": "@mixmaxhq/babel-plugin-import-everywhere",
+  "version": "0.0.0",
+  "description": "Use import statements in any context, not just the top-level module scope",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "del dist && rollup \"-c$([ \"$WATCH\" = true ] && echo w)\"",
+    "ci": "npm run lint && npm test",
+    "ci:commitlint": "commitlint-jenkins --pr-only",
+    "lint": "eslint . && flow",
+    "prepublishOnly": "npm run build && if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
+    "semantic-release": "semantic-release",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mixmaxhq/babel-plugin-import-everywhere.git"
+  },
+  "author": "Eli Skeggs <eli@mixmax.com> (https://mixmax.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixmaxhq/babel-plugin-import-everywhere/issues"
+  },
+  "homepage": "https://github.com/mixmaxhq/babel-plugin-import-everywhere#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-flow": "^7.8.3",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@mixmaxhq/commitlint-jenkins": "^1.4.2",
+    "@mixmaxhq/prettier-config": "^1.0.0",
+    "@mixmaxhq/semantic-release-config": "^2.0.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-mixmax": "^4.6.0",
+    "flow-bin": "^0.116.1",
+    "jest": "^24.9.0",
+    "nock": "^11.7.2",
+    "prettier": "^1.19.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "semantic-release": "^16.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "manualPublishMessage": "This repository is configured to use semantic-release for its releases. Please do not release manually.\n"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "extends": "@mixmaxhq/semantic-release-config"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
