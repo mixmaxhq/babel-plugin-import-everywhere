@@ -40,7 +40,7 @@
     "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-mixmax": "^4.6.0",
-    "flow-bin": "^0.116.1",
+    "flow-bin": "^0.127.0",
     "jest": "^24.9.0",
     "nock": "^11.7.2",
     "prettier": "^1.19.1",
