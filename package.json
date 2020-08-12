@@ -42,7 +42,7 @@
     "eslint-config-mixmax": "^4.6.0",
     "flow-bin": "^0.116.1",
     "jest": "^24.9.0",
-    "nock": "^11.7.2",
+    "nock": "^13.0.4",
     "prettier": "^1.19.1",
     "rollup": "^1.29.0",
     "rollup-plugin-babel": "^4.3.3",
